@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Alex Ioannides" />
+
+<meta name="date" content="2016-12-16" />
+
+<title>Introduction</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Introduction</h1>
+<h4 class="author"><em>Alex Ioannides</em></h4>
+<h4 class="date"><em>2016-12-16</em></h4>
+
+
+
+<div id="machine-learning-pipelines-for-r" class="section level1">
+<h1>Machine Learning Pipelines for R</h1>
+<p>Building machine learning and statistical models often requires pre- and post-transformation of the input and/or response variables, prior to training (or fitting) the models. For example, a model may require training on the logarithm of the response and input variables. As a consequence, fitting and then generating predictions from these models requires repeated application of transformation and inverse-transformation functions - to go from the domain of the original input variables to the domain of the original output variables (via the model). This is usually quite a laborious and repetitive process that leads to messy code and notebooks.</p>
+<p>The <code>pipeliner</code> package aims to provide an elegant solution to these issues by implementing a common interface and workflow with which it is possible to:</p>
+<ul>
+<li>define transformation and inverse-transformation functions;</li>
+<li>fit a model on training data; and then,</li>
+<li>generate a prediction (or model-scoring) function that automatically applies the entire pipeline of transformations and inverse-transformations to the inputs and outputs of the inner-model and its predicted values (or scores).</li>
+</ul>
+<p>The idea of pipelines is inspired by the machine learning pipelines implemented in <a href="http://spark.apache.org/docs/latest/ml-pipeline.html" title="Pipelines in Apache Spark MLib">Apache Spark’s MLib library</a> (which are in-turn inspired by Python’s scikit-Learn package). This package is still in its infancy and the latest development version can be downloaded from <a href="https://github.com/AlexIoannides/pipeliner" title="Pipeliner on GitHub">this GitHub repository</a> using the <code>devtools</code> package (bundled with RStudio),</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;alexioannides/pipeliner&quot;</span>)</code></pre></div>
+<div id="pipes-in-the-pipleline" class="section level2">
+<h2>Pipes in the Pipleline</h2>
+<p>There are currently four types of pipeline section - a section being a function that wraps a user-defined function - that can be assembled into a pipeline:</p>
+<ul>
+<li><code>transform_features</code>: wraps a function that maps input variables (or features) to another space - e.g.,</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">transform_features</span>(function(df) { 
+  <span class="kw">data.frame</span>(<span class="dt">x1 =</span> <span class="kw">log</span>(df$var1))
+})</code></pre></div>
+<ul>
+<li><code>transform_response</code>: wraps a function that maps the response variable to another space - e.g.,</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">transform_response</span>(function(df) { 
+  <span class="kw">data.frame</span>(<span class="dt">y =</span> <span class="kw">log</span>(df$response))
+})</code></pre></div>
+<ul>
+<li><code>estimate_model</code>: wraps a function that defines how to estimate a model from training data in a data.frame - e.g.,</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">estimate_model</span>(function(df) { 
+  <span class="kw">lm</span>(y ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>x1, df)
+})</code></pre></div>
+<ul>
+<li><code>inv_transform_features(f)</code>: wraps a function that is the inverse to <code>transform_response</code>, such that we can map from the space of inner-model predictions to the one of output domain predictions - e.g.,</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inv_transform_response</span>(function(df) { 
+  <span class="kw">data.frame</span>(<span class="dt">pred_response =</span> <span class="kw">exp</span>(df$pred_y))
+})</code></pre></div>
+<p>As demonstrated above, each one of these functions expects as its argument another unary function of a data.frame (i.e. it has to be a function of a single data.frame). With the <strong>exception</strong> of <code>estimate_model</code>, which expects the input function to return an object that has a <code>predict.object-class-name</code> method existing in the current environment (e.g. <code>predict.lm</code> for linear models built using <code>lm()</code>), all the other transform functions also expect their input functions to return data.frames (consisting entirely of columns <strong>not</strong> present in the input data.frame). If any of these rules are violated then appropriately named errors will be thrown to help you locate the issue.</p>
+<p>If this sounds complex and convoluted then I encourage you to to skip to the examples below - this framework is <strong>very</strong> simple to use in practice. Simplicity is the key aim here.</p>
+</div>
+<div id="two-interfaces-to-rule-them-all" class="section level2">
+<h2>Two Interfaces to Rule Them All</h2>
+<p>I am a great believer and protagonist for functional programming - especially for data-related tasks like building machine learning models. At the same time the notion of a ‘machine learning pipeline’ is well represented with a simple object-oriented class hierarchy (which is how it is implemented in <a href="http://spark.apache.org/docs/latest/ml-pipeline.html" title="Pipelines in Apache Spark MLib">Apache Spark’s</a>). I couldn’t decide which style of interface was best, so I implemented both within <code>pipeliner</code> (using the same underlying code) and ensured their output can be used interchangeably. To keep this introduction simple, however, I’m only going to talk about the functional interface - those interested in the (more) object-oriented approach are encouraged to read the manual pages for the <code>ml_pipeline_builder</code> ‘class’.</p>
+<div id="example-usage-with-a-functional-flavour" class="section level3">
+<h3>Example Usage with a Functional Flavour</h3>
+<p>We use the <code>faithful</code> dataset shipped with R, together with the <code>pipeliner</code> package to estimate a linear regression model for the eruption duration of ‘Old Faithful’ as a function of the inter-eruption waiting time. The transformations we apply to the input and response variables - before we estimate the model - are simple scaling by the mean and standard deviation (i.e. mapping the variables to z-scores).</p>
+<p>The end-to-end process for building the pipeline, estimating the model and generating in-sample predictions (that include all interim variable transformations), is as follows,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pipeliner)
+
+data &lt;-<span class="st"> </span>faithful
+
+lm_pipeline &lt;-<span class="st"> </span><span class="kw">pipeline</span>(
+  data,
+  
+  <span class="kw">transform_features</span>(function(df) { 
+    <span class="kw">data.frame</span>(<span class="dt">x1 =</span> (df$waiting -<span class="st"> </span><span class="kw">mean</span>(df$waiting)) /<span class="st"> </span><span class="kw">sd</span>(df$waiting))
+  }),
+  
+  <span class="kw">transform_response</span>(function(df) {
+    <span class="kw">data.frame</span>(<span class="dt">y =</span> (df$eruptions -<span class="st"> </span><span class="kw">mean</span>(df$eruptions)) /<span class="st"> </span><span class="kw">sd</span>(df$eruptions))
+  }),
+  
+  <span class="kw">estimate_model</span>(function(df) { 
+    <span class="kw">lm</span>(y ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>x1, df)
+  }),
+  
+  <span class="kw">inv_transform_response</span>(function(df) { 
+    <span class="kw">data.frame</span>(<span class="dt">pred_eruptions =</span> df$pred_model *<span class="st"> </span><span class="kw">sd</span>(df$eruptions) +<span class="st"> </span><span class="kw">mean</span>(df$eruptions))
+  })
+)
+
+in_sample_predictions &lt;-<span class="st"> </span><span class="kw">predict</span>(lm_pipeline, data, <span class="dt">verbose =</span> <span class="ot">TRUE</span>)  
+<span class="kw">head</span>(in_sample_predictions)</code></pre></div>
+<pre><code>##   eruptions waiting         x1           y pred_model pred_eruptions
+## 1     3.600      79  0.5960248  0.09831763  0.5369058       4.100592
+## 2     1.800      54 -1.2428901 -1.47873278 -1.1196093       2.209893
+## 3     3.333      74  0.2282418 -0.13561152  0.2056028       3.722452
+## 4     2.283      62 -0.6544374 -1.05555759 -0.5895245       2.814917
+## 5     4.533      85  1.0373644  0.91575542  0.9344694       4.554360
+## 6     2.883      55 -1.1693335 -0.52987412 -1.0533487       2.285521</code></pre>
+</div>
+<div id="accessing-inner-models-prediction-functions" class="section level3">
+<h3>Accessing Inner Models &amp; Prediction Functions</h3>
+<p>We can access the estimated inner models directly and compute summaries, etc - for example,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(lm_pipeline$inner_model)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ 1 + x1, data = df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.13826 -0.33021  0.03074  0.30586  1.04549 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -3.139e-16  2.638e-02    0.00        1    
+## x1           9.008e-01  2.643e-02   34.09   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.435 on 270 degrees of freedom
+## Multiple R-squared:  0.8115, Adjusted R-squared:  0.8108 
+## F-statistic:  1162 on 1 and 270 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Pipeline prediction functions can also be accessed directly in a similar way - for example,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pred_function &lt;-<span class="st"> </span>lm_pipeline$predict 
+predictions &lt;-<span class="st"> </span><span class="kw">pred_function</span>(data, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)
+
+<span class="kw">head</span>(predictions)</code></pre></div>
+<pre><code>##   pred_eruptions
+## 1       4.100592
+## 2       2.209893
+## 3       3.722452
+## 4       2.814917
+## 5       4.554360
+## 6       2.285521</code></pre>
+</div>
+</div>
+<div id="turbo-charged-pipelines-in-the-tidyverse" class="section level2">
+<h2>Turbo-Charged Pipelines in the Tidyverse</h2>
+<p>The <code>pipeliner</code> approach to building models becomes even more concise when combined with the set of packages in the <a href="http://tidyverse.org" title="Welcome to The Tidyverse!">tidyverse</a>. For example, the ‘Old Faithful’ pipeline could be rewritten as,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+
+lm_pipeline &lt;-<span class="st"> </span>data %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">pipeline</span>(
+    <span class="kw">transform_features</span>(function(df) { 
+      <span class="kw">transmute</span>(df, <span class="dt">x1 =</span> (waiting -<span class="st"> </span><span class="kw">mean</span>(waiting)) /<span class="st"> </span><span class="kw">sd</span>(waiting))
+    }),
+    
+    <span class="kw">transform_response</span>(function(df) {
+      <span class="kw">transmute</span>(df, <span class="dt">y =</span> (eruptions -<span class="st"> </span><span class="kw">mean</span>(eruptions)) /<span class="st"> </span><span class="kw">sd</span>(eruptions))
+    }),
+    
+    <span class="kw">estimate_model</span>(function(df) { 
+      <span class="kw">lm</span>(y ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>x1, df)
+    }),
+    
+    <span class="kw">inv_transform_response</span>(function(df) { 
+      <span class="kw">transmute</span>(df, <span class="dt">pred_eruptions =</span> pred_model *<span class="st"> </span><span class="kw">sd</span>(eruptions) +<span class="st"> </span><span class="kw">mean</span>(eruptions))
+    })
+  )
+
+<span class="kw">head</span>(<span class="kw">predict</span>(lm_pipeline, data))</code></pre></div>
+<pre><code>## [1] 4.100592 2.209893 3.722452 2.814917 4.554360 2.285521</code></pre>
+<p>Nice, compact and expressive (if I don’t say so myself)!</p>
+<div id="compact-cross-validation" class="section level3">
+<h3>Compact Cross-validation</h3>
+<p>If we now introduce the <code>modelr</code> package into this workflow and adopt the the list-columns pattern described in Hadley Wickham’s <a href="http://r4ds.had.co.nz/many-models.html#list-columns-1" title="R 4 Data Science - Many Models &amp; List Columns">R for Data Science</a>, we can also achieve wonderfully compact end-to-end model estimation and cross-validation,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(modelr)
+
+<span class="co"># define a function that estimates a machine learning pipeline on a single fold of the data</span>
+pipeline_func &lt;-<span class="st"> </span>function(df) {
+  <span class="kw">pipeline</span>(
+    df,
+    <span class="kw">transform_features</span>(function(df) {
+      <span class="kw">transmute</span>(df, <span class="dt">x1 =</span> (waiting -<span class="st"> </span><span class="kw">mean</span>(waiting)) /<span class="st"> </span><span class="kw">sd</span>(waiting))
+    }),
+
+    <span class="kw">transform_response</span>(function(df) {
+      <span class="kw">transmute</span>(df, <span class="dt">y =</span> (eruptions -<span class="st"> </span><span class="kw">mean</span>(eruptions)) /<span class="st"> </span><span class="kw">sd</span>(eruptions))
+    }),
+
+    <span class="kw">estimate_model</span>(function(df) {
+      <span class="kw">lm</span>(y ~<span class="st"> </span><span class="dv">1</span> +<span class="st"> </span>x1, df)
+    }),
+
+    <span class="kw">inv_transform_response</span>(function(df) {
+      <span class="kw">transmute</span>(df, <span class="dt">pred_eruptions =</span> pred_model *<span class="st"> </span><span class="kw">sd</span>(eruptions) +<span class="st"> </span><span class="kw">mean</span>(eruptions))
+    })
+  )
+}
+
+<span class="co"># 5-fold cross-validation using machine learning pipelines</span>
+cv_rmse &lt;-<span class="st"> </span><span class="kw">crossv_kfold</span>(data, <span class="dv">5</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">model =</span> <span class="kw">map</span>(train, ~<span class="st"> </span><span class="kw">pipeline_func</span>(<span class="kw">as.data.frame</span>(.x))),
+         <span class="dt">predictions =</span> <span class="kw">map2</span>(model, test, ~<span class="st"> </span><span class="kw">predict</span>(.x, <span class="kw">as.data.frame</span>(.y))),
+         <span class="dt">residuals =</span> <span class="kw">map2</span>(predictions, test, ~<span class="st"> </span>.x -<span class="st"> </span><span class="kw">as.data.frame</span>(.y)$eruptions),
+         <span class="dt">rmse =</span> <span class="kw">map_dbl</span>(residuals, ~<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">mean</span>(.x ^<span class="st"> </span><span class="dv">2</span>)))) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_rmse =</span> <span class="kw">mean</span>(rmse), <span class="dt">sd_rmse =</span> <span class="kw">sd</span>(rmse))
+
+cv_rmse</code></pre></div>
+<pre><code>## # A tibble: 1 × 2
+##   mean_rmse    sd_rmse
+##       &lt;dbl&gt;      &lt;dbl&gt;
+## 1 0.4870439 0.05233654</code></pre>
+</div>
+</div>
+</div>
+<div id="forthcoming-attractions" class="section level1">
+<h1>Forthcoming Attractions</h1>
+<p>I built <code>pipeliner</code> largely to fill a hole in my own workflows. Up until now I’ve used Max Kuhn’s excellent <a href="http://topepo.github.io/caret/index.html" title="Caret">caret package</a> quite a bit, but for in-the-moment model building (e.g. within a R Notebook) it wasn’t simplifying the code <em>that</em> much, and the style doesn’t quite fit with the tidy and functional world that I now inhabit most of the time. So, I plugged the hole by myself. I intend to live with <code>pipeliner</code> for a while to get an idea of where it might go next, but I am always open to suggestions (and bug notifications) - please <a href="https://github.com/AlexIoannides/pipeliner/issues" title="Pipeliner Issues on GitHub">leave any ideas here</a>.</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
